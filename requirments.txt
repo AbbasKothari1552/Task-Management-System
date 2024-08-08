@@ -1,0 +1,7 @@
+django
+python-dotenv
+django-allauth[socialaccount]
+djangorestframework 
+djangorestframework-simplejwt
+Pillow
+mysqlclient

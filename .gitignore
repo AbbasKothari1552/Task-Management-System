@@ -1,0 +1,7 @@
+.env
+virt
+core/__init__.py
+core/__pycache__
+user/migrations
+user/__init__.py
+user/__pycache__
