@@ -5,3 +5,7 @@ core/__pycache__
 user/migrations
 user/__init__.py
 user/__pycache__
+page/migrations
+page/__init__.py
+page/__pycache__
+debug.log
