@@ -8,4 +8,7 @@ user/__pycache__
 page/migrations
 page/__init__.py
 page/__pycache__
+taskmanager/migrations
+taskmanager/__init__.py
+taskmanager/__pycache__
 debug.log

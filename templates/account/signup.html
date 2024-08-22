@@ -1,18 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form method="post" action="{% url 'account_signup' %}">
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- <form method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Sign Up</button>
     </form>
     {% load socialaccount %}
     <a href="{% provider_login_url 'google' %}">Sign Up with Google</a>
-    <a href="{% provider_login_url 'facebook' %}">Sign In with Facebook</a>
-</body>
-</html>
+    <a href="{% provider_login_url 'facebook' %}">Sign In with Facebook</a> -->
+
+
+    <div class="overlay">
+        <div class="loginFormSignup">
+            <span id="cancel">&times;</span>
+            <!-- <form method="post" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+                <div>
+                    <label for="">Email address</label>
+                    <input type="email" name="login" required id="email">
+                </div>
+                <div>
+                    <label for="">First Name</label>
+                    <input type="text" >
+                </div>
+                <div>
+                    <label for="">Last Name</label>
+                    <input type="text" >
+                </div>
+                <div>
+                    <label for="">Password</label>
+                    <input type="password" name="password" required id="password">
+                </div>
+                <button class="LoginBtn" type="submit">Signup</button>
+            </form> -->
+            <form method="post" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Sign Up</button>
+            </form>
+            <br>
+            <hr>
+            <h3 style="margin-top: 10px;">Social Login</h3>
+            <button id="google" class="socialBtn"> Sign-up with google</button>
+            <button class="socialBtn">Sign-up with facebook</button>
+        </div>
+    </div>
+
+{% endblock %}

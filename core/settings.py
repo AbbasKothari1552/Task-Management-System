@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     # apps
     'user',
-    'page'
+    'page',
+    'taskmanager',
 ]
 
 MIDDLEWARE = [
@@ -206,6 +207,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 # custom user authentication.
 AUTH_USER_MODEL = 'user.CustomUser' 
+
 # Override default login form
 LOGIN_FORM = 'yourapp.forms.CustomAuthenticationForm'
 
@@ -215,10 +217,11 @@ ACCOUNT_FORMS = {'signup': 'user.forms.CustomSignupForm'}
 # Custom Account Adapter
 ACCOUNT_ADAPTER = 'user.adapter.CustomAccountAdapter'
 
-# # Define the custom URLs
-# LOGIN_URL = '/accounts/login/'
-# LOGOUT_URL = '/accounts/logout/'
-# SIGNUP_URL = '/accounts/signup/'
+# Custom socialLogins adapter
+SOCIALACCOUNT_ADAPTER = 'user.adapter.MySocialAccountAdapter'
+
+# login required decorator login path.
+LOGIN_URL = '/accounts/login/'
 
 # Redirect after successful login
 LOGIN_REDIRECT_URL = '/'  # Redirect to home 
