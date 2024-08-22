@@ -224,8 +224,6 @@ ACCOUNT_ADAPTER = 'user.adapter.CustomAccountAdapter'
 LOGIN_REDIRECT_URL = '/'  # Redirect to home 
 LOGOUT_REDIRECT_URL = '/'  # Redirect to home
 ACCOUNT_SIGNUP_REDIRECT_URL = '/accounts/login/'  # Redirect after successful signup
-# ACCOUNT_LOGOUT_REDIRECT_URL = '/'
-# ACCOUNT_AUTHENTICATED_LOGIN_REDIRECT_URL = '/'
 
 # Remove password constraints.
 AUTH_PASSWORD_VALIDATORS = []
