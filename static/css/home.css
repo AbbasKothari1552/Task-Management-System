@@ -1,0 +1,10 @@
+.tasktable{
+    width: 70%;
+    height: fit-content;
+    background-color: aqua;
+    position: absolute;
+    top: 30%;
+    left: 2%;
+
+}
+

@@ -1,0 +1,11 @@
+<div class="task_overlay">
+    <div class="task_form">
+        <span id="hide_task">&times;</span>
+        <form id="TaskForm" method="post" action="">  
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" id="task_btn"></button>
+        </form>
+    </div>
+</div>
+

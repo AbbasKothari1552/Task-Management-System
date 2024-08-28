@@ -77,17 +77,34 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     };
     
+    // Calendar.prototype.clickDay = function(o) {
+    //     var selected = document.getElementsByClassName("selected"),
+    //         len = selected.length;
+    //     if(len !== 0){
+    //         selected[0].className = "";
+    //     }
+    //     o.className = "selected";
+    //     selectedDay = new Date(year, month, o.innerHTML);
+    //     this.drawHeader(o.innerHTML);
+    //     this.setCookie('selected_day', 1);
+        
+    // };
     Calendar.prototype.clickDay = function(o) {
         var selected = document.getElementsByClassName("selected"),
             len = selected.length;
-        if(len !== 0){
+        if (len !== 0) {
             selected[0].className = "";
         }
         o.className = "selected";
         selectedDay = new Date(year, month, o.innerHTML);
         this.drawHeader(o.innerHTML);
-        this.setCookie('selected_day', 1);
-        
+    
+        // Update the hidden input field with the selected date in YYYY-MM-DD format
+        var formattedDate = selectedDay.getFullYear() + '-' + ('0' + (selectedDay.getMonth() + 1)).slice(-2) + '-' + ('0' + selectedDay.getDate()).slice(-2);
+        document.getElementById('selectedDate').value = formattedDate;
+    
+        // Submit the form with the selected date
+        document.getElementById('dateForm').submit();
     };
     
     Calendar.prototype.preMonth = function() {

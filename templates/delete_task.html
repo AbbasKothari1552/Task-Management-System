@@ -1,0 +1,12 @@
+<div class="delete_task_overlay">
+    <div class="delete_task_form">
+        <span id="hide_delete_task">&times;</span>
+        <h4>Delete Task</h4>
+        <p id="modalTaskTitle"></p>
+        <form id="deleteTaskForm" method="post" action="">
+            {% csrf_token %}
+            <button type="submit">Confirm Delete</button>
+        </form>
+        <!-- <button id="cancelDelete">Cancel</button> -->
+    </div>
+</div>
