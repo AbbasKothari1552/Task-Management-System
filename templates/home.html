@@ -1,87 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
+<h1>Welcome, {{ user.first_name }} {{ user.last_name }}!</h1>
+    <div class="row">
+        <div class="col-sm-6">
+            <!-- <h2>Tasks <b>To Do</b></h2> -->
+        </div>
+        <div class="col-sm-6">
+            <a href="#deleteUserTask" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+            <a id="add_task" href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add</span></a>
+        </div>
+    </div>
+    <div class="tasktable">
+        {% block task_list %}
+        {% endblock task_list %}
+    </div>
 
-<h1>Welcome, {{user.first_name}} {{user.last_name}}!</h1>
+    {% include 'calendar.html' %}
 
-<div class="elegant-calencar">
-    <p id="reset">reset</p>
-     <div id="header" class="clearfix">
-        <div class="pre-button">&lt;</div>
-         <div class="head-info">
-             <div class="head-day"></div>
-             <div class="head-month"></div>
-         </div>
-         <div class="next-button">></div>
-     </div>
-     <table id="calendar">
-         <thead>
-             <tr>
-                 <th>Sun</th>
-                 <th>Mon</th>
-                 <th>Tue</th>
-                 <th>Wed</th>
-                 <th>Thu</th>
-                 <th>Fri</th>
-                 <th>Sat</th>
-             </tr>
-         </thead>
-         <tbody>
-             <tr>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-             </tr>
-             <tr>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-             </tr>
-             <tr>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-             </tr>
-             <tr>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-             </tr>
-             <tr>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-             </tr>
-             <tr>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-             </tr>
-         </tbody>
-     </table>
- </div>
+    <!-- Hidden form for date wise task showing -->
+    <form id="dateForm" method="get" action="{% url 'task_list' %}">
+        <input type="hidden" id="selectedDate" name="date" value="">
+    </form>
 
 {% endblock %}
+

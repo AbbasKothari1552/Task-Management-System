@@ -25,7 +25,9 @@ def task_create(request):
         # redirect to task_list view
         return redirect('task_list')
     else:
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return redirect('task_list')
+
+
 
 
 
